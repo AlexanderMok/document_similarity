@@ -10,6 +10,7 @@ import java.nio.file.FileSystems;
 
 public class StopwordsLoader {
 	
+	private static final String DEFAULT_STOPWORDS_PATH = "/models/stopwords/StopWords.txt";
 	protected HashSet<String> stopWords;
 	
 	public StopwordsLoader() {
@@ -41,7 +42,7 @@ public class StopwordsLoader {
     }
     
     public void loadStopWordsDefault() {
-    	Path path = FileSystems.getDefault().getPath(".", "/conf/stop_words.dict");
+    	Path path = FileSystems.getDefault().getPath(".", DEFAULT_STOPWORDS_PATH);
     	Charset charset = Charset.forName("UTF-8");
     	loadStopWords(path,charset);
     }

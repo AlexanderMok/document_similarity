@@ -10,17 +10,21 @@ public class HammingWorker extends Worker<Map<String, Integer>> {
 	public void run() {
 		// retrieve job from jobQueue
 		while (true) {
-			HammingJob job = (HammingJob) super.jobQueue.poll();
+			Job job = super.jobQueue.poll();
 
 			if (job == null)
 				break;
-
-			result = handle(job);
+			
+			if (job instanceof HammingJob) {
+				job = (HammingJob)job;
+				result = handle(job);
 //			
 //			if (result.size() == this.job.getCompare().size()) {
 //				stop();
 //			}
-			super.resultMap.put(job.getJobId(), result);
+				super.resultMap.put(job.getJobId(), result);
+			}
+
 		}
 	}
 

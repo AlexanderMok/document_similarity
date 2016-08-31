@@ -117,7 +117,7 @@ public class SimHash {
 			
 			for (i = 0; i< BITS_LENGTH; i++) {
 				//C++ 的实现,可控制符号位，weights[j] += ( ( (u64_1 << j) & (feature) ) != 0 ? 1: -1 ) * weight;
-				//必须使用BigInteger避免  二进制位 符号位 引起的异常
+				//使用BigInteger避免  二进制位 符号位 引起的异常
 				weights[i] += (((new BigInteger(String.valueOf(u64_1 << i)).and(hashFeature))
 							.compareTo(BigInteger.ZERO)) != 0 ? 1 : -1) * weight;
 			}

@@ -3,13 +3,13 @@ package similarity.multithread;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+
+import common.MapUtil;
 /**
  * 
- * @package com.kass.app.app_user.models.similarity.multithread
- * @project app-kasscloud
  * @description
  *     Implementation of specific logic of reduce process of HammingDistance calculation     
- * @author 莫庆来
+ * @author Alexander Mok
  * @date 2016年8月15日
  */
 public class HammingMaster extends Master<Map<String, Integer>> {

@@ -2,7 +2,6 @@ package similarity.tokenizer.jieba.keyword;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
@@ -63,14 +62,6 @@ public class IDFLoader {
 
 	public double medianIDF() {
 		return medianIDF;
-	}
-
-	public static void main(String[] args) {
-
-		Path path = FileSystems.getDefault().getPath(".", "/conf/idf.txt.big");
-		IDFLoader idfld = new IDFLoader(path);
-		
-		System.out.println(idfld.medianIDF());
 	}
 
 }

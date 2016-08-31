@@ -7,10 +7,8 @@ import java.nio.charset.Charset;
 
 
 /**
- * @package com.kass.app.app_user.models.similarity.simhash
- * @project app-kasscloud
  * @description Murmurhash function Murmurhash哈希函数
- * @author 莫庆来
+ * @author Alexander Mok
  * @date 2016年8月2日
  */
 public class HashFunction {

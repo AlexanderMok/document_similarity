@@ -10,13 +10,17 @@ public class TfIdfWorker extends Worker<Map<String, Double>>{
 	public void run() {
 		// retrieve job from jobQueue
 		while (true) {
-			TfIdfJob job = (TfIdfJob) super.jobQueue.poll();
+			Job job = super.jobQueue.poll();
 
 			if (job == null)
 				break;
+			
+			if (job instanceof TfIdfJob) {
+				job = (TfIdfJob)job;
+				result = handle(job);
+				super.resultMap.put(job.getJobId(), result);
+			}
 
-			result = handle(job);
-			super.resultMap.put(job.getJobId(), result);
 		}
 	}
 
