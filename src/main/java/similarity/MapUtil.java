@@ -10,10 +10,8 @@ import java.util.stream.Collectors;
 
 /**
  * 
- * @package com.kass.app.app_user.models.similarity.multithread
- * @project app-kasscloud
  * @description sort a map by its value. ascend order
- * @author 莫庆来
+ * @author Alex
  * @date 2016年8月15日
  */
 public class MapUtil {
